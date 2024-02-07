@@ -1,40 +1,26 @@
-# README - Laboratorio de Construcción de Servidor HTTP
-Jose Alejandro correa Rodriguez
+# Taller #2 - Aplicaciones Distribuidas
 
+Este proyecto corresponde al Taller #2 de la asignatura de Aplicaciones Distribuidas, realizado por José Alejandro Correa Rodríguez.
 
+## Descripción del Reto
 
-Este repositorio contiene el código fuente de un servidor HTTP de tipo fachada, diseñado para establecer una conexión por socket con un servicio API REST para la consulta de información sobre películas.
-
-## Empezando
-
-### Directorios
-
-En el proyecto, encontrarás dos directorios principales:
-
-1. **tallerCasa:** Contiene material relacionado con el taller .
-2. **app:** Contiene material relacionado con trabajo en clase y no es necesario para la ejecución del servidor.
-
+El reto consiste en escribir un servidor web que sea capaz de manejar múltiples solicitudes de manera seguida (no concurrentes). Este servidor debe tener la capacidad de leer archivos del disco local y retornar todos los archivos solicitados, incluyendo páginas HTML, archivos JavaScript, CSS e imágenes. Además, se requiere construir una aplicación web utilizando JavaScript, CSS e imágenes para probar el servidor. La aplicación web debe incluir comunicación asíncrona con unos servicios REST en el backend. Es importante destacar que no se permite el uso de frameworks web como Spark o Spring, únicamente se debe emplear Java y las librerías necesarias para el manejo de la red.
 
 ## En Funcionamiento
 
 ### ¿Cómo funciona?
 
-1. Dirígete al directorio `tallerCasa`.
-2. Ejecuta la clase `HTTPServer`.
+1. Dirígete al directorio `example`.
+2. Ejecuta la clase `Main`.
 3. En tu navegador preferido (por ejemplo, Firefox), visita `localhost:35000`, que es el puerto del socket que se abre.
 
-En la interfaz web, encontrarás un input para realizar  una consulta  con el método GEt, para ejecutar precionar el boton  "Submit".
+## Descripción del Proyecto
 
+Este proyecto consta de 4 clases, siendo la principal `Main`, seguida de `HttpServer`. Permite manejar múltiples solicitudes de manera seguida.
 
+## Herramientas Utilizadas
 
-### Lógica del Servidor
+- **Maven:** Herramienta de gestión de proyectos utilizada para la construcción y gestión de dependencias del proyecto.
+- **Git:** Sistema de control de versiones distribuido utilizado para el control de cambios y colaboración en el desarrollo del proyecto.
+- **NetBeans:** Entorno de desarrollo integrado (IDE) utilizado para escribir, compilar y depurar el código del proyecto.
 
-El servidor fachada recibe mensajes en formato JSON de un servidor que se conecta al API de OMBapi. Realiza la consulta al API solo si la búsqueda no está en el caché, que es resistente a la concurrencia.
-
-La respuesta del API en formato JSON se procesa utilizando la librería JSON incluida en Java (presente en el archivo `pom.xml`). Se realiza el mapeo del JSON para construir un listado organizado que se muestra de forma amigable en la interfaz HTML.
-
-## Herramienta usadas
-
-### Maven
-### git
-### netbeans
